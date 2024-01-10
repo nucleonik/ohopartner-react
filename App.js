@@ -1,12 +1,59 @@
 import { StatusBar } from 'expo-status-bar';
-import {Text, View, Image, TextInput, ImageBackground, Button, Pressable } from 'react-native';
+import {Text, View, Image, TextInput, Modal,  TouchableOpacity } from 'react-native';
 import React from 'react';
 import Authentication from './components/pages/Authentication';
-
+import {NavigationContainer} from '@react-navigation/native';
 import {LinearGradient} from 'expo-linear-gradient';
 
 export default function App() {
+const [openModal, setOpenModal]= React.useState(false)
+function openForgotPasswordModal() {
+  setOpenModal(true);
+}
 
+function closeForgotPasswordModal() {
+  setOpenModal(false);
+}
+const transparent = 'rgba(0,0,0,0.5)'; 
+function renderModal() {
+
+  return (
+    <Modal 
+    visible={openModal} 
+    animationType='none' 
+    transparent={true}>
+    <TouchableOpacity
+          style={{
+            flex: 1,
+            width: '100%',
+            height: '100%'
+          }}
+          onPress={closeForgotPasswordModal}
+        >
+      <View style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: transparent,
+      }}>
+        <View style={{
+          backgroundColor: 'white',
+          padding: 15,
+          width: '90%',
+          height: 500,
+          borderRadius: 10,
+        }}>
+          <Text>Why did you forgot your password?</Text>
+          <TouchableOpacity onPress={closeForgotPasswordModal}>
+              <Text>Close Modal</Text>
+            </TouchableOpacity>
+        </View>
+      </View>
+      </TouchableOpacity>  
+    </Modal>
+  )
+  
+}
   return (
     <View style={{
       flex: 1,
@@ -153,13 +200,15 @@ export default function App() {
         <Image source={require('../my-app/assets/password_hide_icon.png')}/>
         </View>
         </View>
+        <TouchableOpacity
+        onPress={() => setOpenModal(true)}>
         <View
         style={{
           
           marginTop: 15,
           marginRight: 25,
           alignItems: 'flex-end',
-
+          
         }}>
           <Text style={{
             fontSize: 18,
@@ -169,7 +218,10 @@ export default function App() {
             Forgot Password
           </Text>
         </View>
-        <Pressable>
+        </TouchableOpacity>
+     
+        <NavigationContainer>
+        <TouchableOpacity>
         <View style={{
           justifyContent: 'flex-start'
         }}>
@@ -185,7 +237,7 @@ export default function App() {
           borderRadius: 22,
           alignItems: 'center',
           justifyContent: 'center',
-          elevation: 2,
+          
           }}>
             <Text style={{
               color: 'white',
@@ -194,8 +246,10 @@ export default function App() {
             }}>Sign in</Text>
         </LinearGradient>
         </View>
-        </Pressable>
+        </TouchableOpacity>
+        </NavigationContainer>
       <StatusBar style="auto" />
+      {renderModal()}
     </View>
   );
 }
