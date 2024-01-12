@@ -139,6 +139,83 @@ const AnalyticsScreen = ({navigation}) => {
         </TouchableOpacity> 
             {renderBranchModal()}
       
+      <TouchableOpacity style={{
+        marginTop: 40,
+        marginLeft: 15,
+        width: 350,
+        height: 130,
+        borderWidth: 1,
+        borderColor: '#ECECEC',
+        borderRadius: 16,
+      }}>
+        <Text
+        style={{
+          marginLeft: 25,
+          marginTop: 25,
+          fontSize: 20,
+          fontWeight: 700,
+        }}>
+          DATES HOSTED</Text>
+          <View style={{
+            flexDirection: 'row'
+          }}>
+          <Text
+        style={{
+          marginLeft: 25,
+          marginTop: 20,
+          fontSize: 16,
+          fontWeight: 400,
+        }}>
+          Total Number of dates hosted: </Text>
+          <Text
+        style={{
+          marginLeft: 8,
+          marginTop: 10,
+          fontSize: 26,
+          fontWeight: 700,
+        }}>
+          73 </Text>
+          </View>
+      </TouchableOpacity>
+      <TouchableOpacity style={{
+        marginTop: 20,
+        marginLeft: 15,
+        width: 350,
+        height: 130,
+        borderWidth: 1,
+        borderColor: '#ECECEC',
+        borderRadius: 16,
+      }}>
+        <Text
+        style={{
+          marginLeft: 25,
+          marginTop: 25,
+          fontSize: 20,
+          fontWeight: 700,
+        }}>
+          GUEST CATERED</Text>
+          <View style={{
+            flexDirection: 'row'
+          }}>
+          <Text
+        style={{
+          marginLeft: 25,
+          marginTop: 20,
+          fontSize: 16,
+          fontWeight: 400,
+        }}>
+          Total Number of Guest Catered: </Text>
+          <Text
+        style={{
+          marginLeft: 8,
+          marginTop: 10,
+          fontSize: 26,
+          fontWeight: 700,
+        }}>
+          146 </Text>
+          </View>
+      </TouchableOpacity>
+      
     </View>
   );
 };
