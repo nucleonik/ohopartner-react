@@ -1,10 +1,12 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
-const AnalyticsScreen = () => {
+const AnalyticsScreen = ({navigation}) => {
   return (
     <View>
-      <Text>Analytics</Text>
+      <Text
+      onPress={()=>navigation.navigate('Reservation')}
+      >Analytics</Text>
     </View>
   );
 };

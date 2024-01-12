@@ -9,10 +9,9 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
   ScrollView,
-  StyleSheet,
 } from 'react-native';
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from '@react-navigation/native';
 import Signinbutton from '../Signinbutton';
 import Toplogoandtext from '../Toplogoandtext';
@@ -57,7 +56,7 @@ export default function Authentication() {
                     height: 32,
                     width: 32,
                   }}
-                  source={require('/Users/rowno/OneDrive/Pictures/test1/my-app/assets/password_icon_gradient.png')}
+                  source={require('../../assets/password_icon_gradient.png')}
                 />
                 <Text
                   style={{
