@@ -1,6 +1,5 @@
 import React from 'react';
-import { SafeAreaView, Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { Image } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ReservationScreen from '../navigation/screens/ReservationScreen'
 import AnalyticsScreen from '../navigation/screens/AnalyticsScreen'
@@ -14,10 +13,53 @@ const MainContainer = () => {
   
   return (
     
-      <Tab.Navigator>
-        <Tab.Screen name='Reservations' component={ReservationScreen}/>
-        <Tab.Screen name='Analytics' component={AnalyticsScreen}/>
-        <Tab.Screen name='Settings' component={SettingsScreen}/>
+      <Tab.Navigator
+      screenOptions={{
+        headerShown: true, 
+        tabBarActiveTintColor: '#B42254', 
+        tabBarInactiveTintColor: '#fff', 
+        tabBarStyle: {
+          paddingTop: 10,
+        }
+        }}>
+        <Tab.Screen name='Reservations' component={ReservationScreen}
+        options={{
+          tabBarIcon: ({focused}) => {
+            return (
+              <Image style={{
+                tintColor: focused ? '#B42254' : 'black',
+                width: focused ? 28 : 24,
+                height: focused ? 28 : 24,
+                
+              }} source={require('../assets/reservationiconfocused.png')}/>
+            )
+          }
+        }}/>
+        <Tab.Screen name='Analytics' component={AnalyticsScreen}
+        options={{
+          tabBarIcon: ({focused}) => {
+            return (
+              <Image style={{
+                tintColor: focused ? '#B42254' : 'black',
+                width: focused ? 28 : 24,
+                height: focused ? 28 : 24,
+                
+              }}  source={require('../assets/analyticsiconfocused.png')}/>
+            )
+          }
+        }}/>
+        <Tab.Screen name='Settings' component={SettingsScreen}
+        options={{
+          tabBarIcon: ({focused}) => {
+            return (
+              <Image style={{
+                tintColor: focused ? '#B42254' : 'black',
+                width: focused ? 28 : 24,
+                height: focused ? 28 : 24,
+              }}  source={require('../assets/settingsiconfocused.png')}/>
+            )
+          }
+        }}/>
       </Tab.Navigator>
     
       

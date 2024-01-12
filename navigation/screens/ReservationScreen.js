@@ -1,6 +1,7 @@
 import React from 'react';
 import { Image, Modal, Text, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import NoReservation from '../../components/NoReservation';
 
 
 
@@ -34,6 +35,7 @@ export default function ReservationScreen ({navigation}) {
             height: 350,
             borderRadius: 8,
           }}>
+            <TouchableOpacity onPress={closeBranchModal}>
             <View
             >
               <Text
@@ -60,18 +62,8 @@ export default function ReservationScreen ({navigation}) {
                 marginLeft: 20,
                 marginTop: 40,
               }}>Yum Cha District, Uttara</Text>
-            </View>
-            <TouchableOpacity onPress={closeBranchModal}>
-                <Text
-                  style={{
-                    fontSize: 20,
-                    marginRight: 20,
-                    letterSpacing: 2,
-                  }}
-                >
-                  Cancel
-                </Text>
-              </TouchableOpacity>
+            </View></TouchableOpacity>
+            
           </View>
         </View>
        
@@ -139,6 +131,9 @@ export default function ReservationScreen ({navigation}) {
         </LinearGradient>
         </TouchableOpacity> 
         {renderBranchModal()}
+      </View>
+      <View>
+      <NoReservation/>
       </View>
     </View>
   );

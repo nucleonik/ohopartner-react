@@ -13,7 +13,6 @@ export default function App() {
 const AnalyticsPage = 'Analytics';
 const SettingsPage = 'Settings';
   return (
-
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
@@ -29,7 +28,7 @@ const SettingsPage = 'Settings';
           name="Reservation"
           component={MainContainer}
           options={({ navigation }) => ({
-            title: 'Awesome app',
+            title: 'Home',
             headerShown: false,
             backgroundColor: '#ffffff',
           })}
