@@ -5,7 +5,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 
 const Signinbutton = () => {
-  const navigation = useNavigation();
+const navigation = useNavigation();
   return (
     <TouchableOpacity onPress={() => navigation.navigate('Reservation')}>
       <View

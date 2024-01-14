@@ -4,14 +4,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MainContainer from './navigation/MainContainer';
-
+import Terms from './navigation/screens/Terms';
 
 export default function App() {
   const Stack = createNativeStackNavigator();
   const Tab = createBottomTabNavigator();
-  const ReservationPage = 'Reservation';
-const AnalyticsPage = 'Analytics';
-const SettingsPage = 'Settings';
+
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -33,6 +31,7 @@ const SettingsPage = 'Settings';
             backgroundColor: '#ffffff',
           })}
         />
+        <Stack.Screen name="Terms" component={Terms} />
       </Stack.Navigator>
     </NavigationContainer>
   );
