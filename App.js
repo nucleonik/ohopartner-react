@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MainContainer from './navigation/MainContainer';
 import Terms from './navigation/screens/Terms';
+import Privacy from './navigation/screens/Privacy';
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -31,7 +32,8 @@ export default function App() {
             backgroundColor: '#ffffff',
           })}
         />
-        <Stack.Screen name="Terms" component={Terms} />
+        <Stack.Screen name="Terms Of Use" component={Terms} />
+        <Stack.Screen name="Privacy Policy" component={Privacy} />
       </Stack.Navigator>
     </NavigationContainer>
   );

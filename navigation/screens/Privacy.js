@@ -1,7 +1,8 @@
 import React from 'react';
-import { ScrollView, Text, View } from 'react-native';
 
-const Terms = () => {
+import { Text, View, ScrollView } from 'react-native';
+
+const Privacy = () => {
   return (
     <ScrollView
       style={{
@@ -124,4 +125,4 @@ const Terms = () => {
   );
 };
 
-export default Terms;
+export default Privacy;

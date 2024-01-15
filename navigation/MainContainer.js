@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ReservationScreen from '../navigation/screens/ReservationScreen';
 import AnalyticsScreen from '../navigation/screens/AnalyticsScreen';
 import SettingsScreen from '../navigation/screens/SettingsScreen';
+
 // const ReservationPage = 'Reservation';
 // const AnalyticsPage = 'Analytics';
 // const SettingsPage = 'Settings';
@@ -61,6 +62,7 @@ const MainContainer = () => {
         name="More"
         component={SettingsScreen}
         options={{
+          // headerShown: false,
           tabBarIcon: ({ focused }) => {
             return (
               <Image
